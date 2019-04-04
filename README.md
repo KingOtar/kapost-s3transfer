@@ -12,7 +12,7 @@ kapost S3transfer Challange
 
  Iamrole: `docker run s3transfer lightsey lightsey-cp --size 5MB`
  
- Env Vars `docker run -e AWS_ACCESS_KEY_ID=[Key here] -e AWS_SECRET_ACCESS_KEY=[Secret here] s3transfer --size 5MB bucket1 bucket2`
+ Env Vars: `docker run -e AWS_ACCESS_KEY_ID=[Key here] -e AWS_SECRET_ACCESS_KEY=[Secret here] s3transfer --size 5MB bucket1 bucket2`
 
 
 ##Thank You
