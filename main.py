@@ -31,19 +31,26 @@ def main(args):
 
     conn = boto3.client('s3')
 
-    #loop through bucket objects
-    for obj in conn.list_objects(Bucket=bucket1)['Contents']:
-        key = obj['Key']
-        size = obj['Size']
-
-        # check size and if larger than provided size, copy to bucket2
-        if size > size_limit:
-            copy_source = {
-                'Bucket': bucket1,
-                'Key': key
-            }
-            conn.copy(copy_source, bucket2, key)
+    #page through bucket contents
+    paginator = conn.get_paginator( "list_objects" )
+    page_iterator = paginator.paginate( Bucket = bucket1)
     
+    print('Copying Objects.', end='', flush=True)
+
+    for page in page_iterator:
+        print('.', end='', flush=True)
+        if "Contents" in page:
+              for obj in page[ "Contents" ]:
+                  key = obj['Key']
+                  size = obj['Size']
+
+                  # check size and if larger than provided size, copy to bucket2
+                  if size > size_limit:
+                      copy_source = {
+                          'Bucket': bucket1,
+                          'Key': key
+                      }
+                      conn.copy(copy_source, bucket2, key)
 
 if __name__ == '__main__':
     arguments = parse_arguments()
