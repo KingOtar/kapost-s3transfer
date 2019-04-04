@@ -4,9 +4,9 @@ kapost S3transfer Challange
 
 ##Usage
 - Since the container isn't hosted in docker hub ( I can do that if needed) you will need to build the container.
-  1. `git clone https://github.com/KingOtar/kapost-s3transfer.git`
-  2. `cd kapost-s3transfer.git`
-  3. `docker build . -t s3transfer`
+1. `git clone https://github.com/KingOtar/kapost-s3transfer.git`
+2. `cd kapost-s3transfer.git`
+3. `docker build . -t s3transfer`
 
 - To run the container, you must either use Iam roles to authenticate into AWS to use the buckets or you can provide credentials by passing in environment variables.
 
