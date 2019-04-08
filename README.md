@@ -1,5 +1,5 @@
 # kapost-s3transfer
-kapost S3transfer Challange
+kapost S3transfer Challenge
 
 
 ## Usage
@@ -16,6 +16,6 @@ kapost S3transfer Challange
 
 
 ## Thank You
-Thank you so much for giving me this oppertunity to take this challange. Please let me know if you have any questions or concerns and I will do my best to assist.
+Thank you so much for giving me this opportunity to take this challenge. Please let me know if you have any questions or concerns and I will do my best to assist.
 
 
